@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-exports = {
+module.exports = {
     name: 'Collect IO',
     $runBefore: ['rendering-docs'],
     $process: (docs: any[]) => {

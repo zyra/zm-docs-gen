@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
     name: 'remove-indices',
     description: 'Document things from source instead of index',
     $runBefore: ['rendering-docs'],

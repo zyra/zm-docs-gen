@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
     name: 'remove-hidden',
     description: 'Removes anything with @hidden tag',
     $runBefore: ['rendering-docs'],

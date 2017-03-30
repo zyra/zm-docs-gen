@@ -1,4 +1,4 @@
-exports = (docsTitle: string) => {
+module.exports = function addDocsTitle(docsTitle: string) {
     return {
         name: 'add-page-titles',
         description: 'Adds page titles to docs',
