@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 try {
     const [Dgeni, config] = [require('dgeni'), require('../../../../docs.config.js')];
     new Dgeni(config.dgeniConfig)
