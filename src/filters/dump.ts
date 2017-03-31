@@ -1,7 +1,7 @@
 exports = {
-    name: 'dump',
-    process: (obj: any) => {
-        console.log(obj);
-        return '';
-    }
+  name: 'dump',
+  process: (obj: any) => {
+    console.log(obj);
+    return '';
+  }
 };
