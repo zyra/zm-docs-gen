@@ -1,5 +1,5 @@
 function shouldShow(doc: any) {
-  if (doc.tags.tagsByName.get('hidden')) {
+  if (!doc.tags || !!doc.tags.tagsByName.get('hidden')) {
     return false;
   }
   doc.members = doc.members.filter((member: any) => !member.tags.tagsByName.get('hidden'));
@@ -10,6 +10,7 @@ function shouldShow(doc: any) {
 module.exports = {
   name: 'remove-hidden',
   description: 'Removes anything with @hidden tag',
+  $runAfter: ['tags-parsed'],
   $runBefore: ['rendering-docs'],
   $process: (docs: any[]) => docs.filter((doc: any) => {
     if (shouldShow(doc)) {
