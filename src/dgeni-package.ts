@@ -5,7 +5,10 @@ const path = require('path');
 
 module.exports = (config: Config) => {
 
-  config = _.merge(DefaultConfig, config);
+  config = _.mergeWith(DefaultConfig, config, (d, c) => {
+    if (_.isArray(d)) return d.concat(c);
+  });
+
   config.templateDir = path.resolve(__dirname, '../../../../', config.templateDir);
   config.outputFolder = path.resolve(__dirname, '../../../../', config.outputFolder);
   config.basePath = path.resolve(__dirname, '../../../../', config.basePath);
