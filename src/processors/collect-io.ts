@@ -4,6 +4,9 @@ module.exports = {
   $runBefore: ['rendering-docs'],
   $process: (docs: any[]) => {
     docs.forEach((doc: any) => {
+
+      if (doc.docType !== 'class') return;
+
       if (doc.members && doc.members.length) {
         const [members, inputs, outputs]: any[] = [[],[],[]];
 
