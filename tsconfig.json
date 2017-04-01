@@ -6,6 +6,7 @@
     "sourceMap": true,
     "outDir": "dist",
     "declaration": true,
+    "removeComments": true,
     "newLine": "LF"
   },
   "exclude": [
