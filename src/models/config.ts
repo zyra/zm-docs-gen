@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 export interface Config {
   processors: string[];
   filters: string[];
@@ -19,5 +21,5 @@ export const DefaultConfig: Config = {
   filters: ['dump', 'marked'],
   tags: ['hidden', 'usage'],
   basePath: './',
-  getOutputPath: doc => doc.name + '/index.html'
+  getOutputPath: doc => _.kebabCase(doc.name) + '/index.html'
 };
