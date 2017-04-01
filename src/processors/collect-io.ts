@@ -14,19 +14,20 @@ module.exports = {
 
           if (_.isUndefined(member.parameters)) {
             member.isProperty = true;
-          }
-
-          if (member.decorators && member.decorators.length) {
-            _.forIn(member.decorators, decorator => {
-              switch (decorator.name) {
-                case 'Input':
-                  inputs.push(member);
-                  return false;
-                case 'Output':
-                  outputs.push(member);
-                  return false;
-              }
-            });
+            if (member.decorators && member.decorators.length) {
+              _.forIn(member.decorators, decorator => {
+                switch (decorator.name) {
+                  case 'Input':
+                    inputs.push(member);
+                    return false;
+                  case 'Output':
+                    outputs.push(member);
+                    return false;
+                }
+              });
+            }
+          } else {
+            members.push(member);
           }
 
         });
